@@ -2,8 +2,19 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const apiRoot = "https://swapi.co/api/";
+
 export const environment = {
-  production: false
+  production: false,
+  api: {
+    resources: `${apiRoot}`,
+    people: `${apiRoot}people`,
+    planets: `${apiRoot}planets`,
+    films: `${apiRoot}films`,
+    species: `${apiRoot}species`,
+    vehicles: `${apiRoot}vehicles`,
+    starships: `${apiRoot}starships`,
+  }
 };
 
 /*
