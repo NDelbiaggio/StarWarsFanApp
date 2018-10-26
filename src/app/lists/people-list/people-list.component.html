@@ -1,3 +1,4 @@
+<h2>People</h2>
 <table class="table table-responsive">
     <thead>
       <tr>
@@ -10,15 +11,10 @@
         <th scope="col">Birth year</th>
         <th scope="col">Gender</th>
         <th scope="col">Eye color</th>
-        <th scope="col">Homeworld</th>
-        <th scope="col">Vehicles</th>
-        <th scope="col">Films</th>
-        <th scope="col">Species</th>
-        <th scope="col">Starships</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let person of people; let i = index" >
+      <tr *ngFor="let person of list; let i = index" >
         <th scope="row">{{i+1}}</th>
         <td scope="col">{{person.name}}</td>
         <td scope="col">{{person.height}}</td>
@@ -28,11 +24,6 @@
         <td scope="col">{{person.birth_year}}</td>
         <td scope="col">{{person.gender}}</td>
         <td scope="col">{{person.eye_color}}</td>
-        <td scope="col">{{person.homeworld}}</td>
-        <td scope="col">Vehicles</td>
-        <td scope="col">Films</td>
-        <td scope="col">Species</td>
-        <td scope="col">Starships</td>
     </tr>
 
     </tbody>

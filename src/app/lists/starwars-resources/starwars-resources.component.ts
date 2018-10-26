@@ -1,5 +1,5 @@
-import { PeopleService } from './../services/api/people.service';
-import { ResourcesService, Category } from './../services/api/resources.service';
+import { PeopleService } from './../../services/api/people.service';
+import { ResourcesService, Category } from './../../services/api/resources.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
@@ -11,18 +11,15 @@ import { Subscription } from 'rxjs';
 export class StarwarsResourcesComponent implements OnInit, OnDestroy {
 
   private categories: Category[];
-
-  private people;
-
   private resourceSubscription: Subscription;
+
+  searchPattern: String = "";
 
 
   constructor(
     private resourcesService: ResourcesService,
-    private peopleService: PeopleService
   ) { 
     this.categories = [];
-    this.people = [];
   }
 
   ngOnInit() {
@@ -30,12 +27,6 @@ export class StarwarsResourcesComponent implements OnInit, OnDestroy {
       .subscribe(categories =>{
         this.categories = categories;
       });
-
-    this.peopleService.getPeople()
-      .subscribe(people=>{
-        this.people = people;
-        console.log(this.people);
-    });
   }
 
   ngOnDestroy(){

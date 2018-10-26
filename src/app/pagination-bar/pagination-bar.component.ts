@@ -24,6 +24,7 @@ export class PaginationBarComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     this.fillPages();
+    this.currentPage = 1;
   }
 
   /**
