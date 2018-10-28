@@ -16,7 +16,7 @@ export class FilmsListComponent extends ListViewComponent<Film> {
     private filmsService: FilmsService,
     private router: Router
   ) { 
-    super(filmsService)
+    super(filmsService, "Films")
   }
 
   loadFilms(pageNumber){

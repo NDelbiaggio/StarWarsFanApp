@@ -14,7 +14,7 @@
       <div class="col-12">
           <app-films-list [links]="species.films" ></app-films-list>
           <app-people-list [links]="species.people" ></app-people-list>
-          <app-planets-list [links]="species.homeworld" ></app-planets-list>
+          <app-planets-list title="Homeworld" [links]="species.homeworld" ></app-planets-list>
           <button (click)="backToResources()" class="btn btn-primary">Back to resources</button>
       </div>
     </div>

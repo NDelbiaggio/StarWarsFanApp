@@ -16,7 +16,7 @@ export class StarshipsListComponent extends ListViewComponent<Starship> {
     private starshipsService: StarshipsService,
     private router: Router
   ) { 
-    super(starshipsService);
+    super(starshipsService, "Starships");
   }
 
   loadStarships(pageNumber){

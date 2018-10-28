@@ -11,7 +11,7 @@
       <img src="assets/films/{{film.episode_id}}.jpg" alt="{{film.name}}">
     </div>
     <div class="col-12">
-        <app-people-list [links]="film.characters" ></app-people-list>
+        <app-people-list title="Characters" [links]="film.characters" ></app-people-list>
         <app-planets-list [links]="film.planets" ></app-planets-list>
         <app-species-list [links]="film.species" ></app-species-list>
         <app-starships-list [links]="film.starships" ></app-starships-list>

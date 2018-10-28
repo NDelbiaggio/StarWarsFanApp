@@ -14,8 +14,8 @@ export class PeopleListComponent extends ListViewComponent<Person> {
   constructor(
     private peopleService: PeopleService,
     private router: Router
-  ) { 
-    super(peopleService);
+  ) {
+    super(peopleService, "People");
   }
 
   loadPeople(pageNumber){

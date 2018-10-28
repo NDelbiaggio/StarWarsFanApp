@@ -15,7 +15,7 @@ export class SpeciesListComponent extends ListViewComponent<Species> {
     private speciesService: SpeciesService,
     private router: Router
   ) { 
-    super(speciesService);
+    super(speciesService, "Species");
   }
 
   loadSpecies(pageNumber){

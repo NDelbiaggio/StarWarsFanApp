@@ -16,7 +16,7 @@ export class PlanetsListComponent extends ListViewComponent<Planet> {
     private planetService: PlanetsService,
     private router: Router
   ) { 
-    super(planetService);
+    super(planetService, "Planets");
   }
 
   loadPlanets(pageNumber){

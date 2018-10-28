@@ -15,7 +15,7 @@ export class VehiclesListComponent extends ListViewComponent<Vehicle> {
     private vehicleService: VehiclesService,
     private router: Router
   ) { 
-    super(vehicleService);
+    super(vehicleService, "Vehicles");
   }
 
   loadVehicules(pageNumber){

@@ -13,7 +13,7 @@
     <div class="col-12">
         <app-films-list [links]="person.films" ></app-films-list>
         <app-species-list [links]="person.species" ></app-species-list>
-        <app-planets-list [links]="person.homeworld" ></app-planets-list>
+        <app-planets-list title="Homeworld" [links]="person.homeworld" ></app-planets-list>
         <app-vehicles-list [links]="person.vehicles" ></app-vehicles-list>
         <app-starships-list [links]="person.starships" ></app-starships-list>
         <button (click)="backToResources()" class="btn btn-primary">Back to resources</button>

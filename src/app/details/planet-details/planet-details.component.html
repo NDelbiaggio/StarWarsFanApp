@@ -13,7 +13,7 @@
       </div>
       <div class="col-12">
           <app-films-list [links]="planet.films" ></app-films-list>
-          <app-people-list [links]="planet.residents" ></app-people-list>
+          <app-people-list title="Residents" [links]="planet.residents" ></app-people-list>
           <button (click)="backToResources()" class="btn btn-primary">Back to resources</button>
       </div>
     </div>

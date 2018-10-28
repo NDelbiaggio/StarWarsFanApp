@@ -18,8 +18,9 @@ export class ListViewComponent<T> implements  OnChanges, OnDestroy {
 
     isLoading: boolean = false;
 
-    constructor(dataService: DataService){
+    constructor(dataService: DataService, defaultTitle: string){
         this.dataService = dataService;
+        if(!this.title){this.title = defaultTitle};
     }
 
     ngOnChanges(changes: SimpleChanges): void {

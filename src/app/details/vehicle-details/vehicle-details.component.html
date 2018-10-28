@@ -14,7 +14,7 @@
       <p>Cargo capacity: {{vehicle.cargo_capacity}}</p>
     </div>
     <div class="col-12">
-      <app-people-list [links]="vehicle.pilots"></app-people-list>
+      <app-people-list title="Pilots" [links]="vehicle.pilots"></app-people-list>
       <app-films-list [links]="vehicle.films"></app-films-list>
       <button (click)="backToResources()" class="btn btn-primary">Back to resources</button>
     </div>
