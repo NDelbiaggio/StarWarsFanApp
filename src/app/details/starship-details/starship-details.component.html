@@ -1,0 +1,36 @@
+<div class="container">
+  <div *ngIf="starship" class="row">
+    <div class="col-md-12">
+      <h2>{{starship.name}}</h2>
+      <p>manufacturer: {{starship.manufacturer}}</p>
+      <p>Passengers class: {{starship.passengers}}</p>
+      <p>Consumables: {{starship.consumables}}</p>
+      <p>Crew: {{starship.crew}}</p>
+      <p>Hyperdrive rating: {{starship.hyperdrive_rating}}</p>
+      <p>MGLT: {{starship.MGLT}}</p>
+      <p>Max atmosphering speed: {{starship.max_atmosphering_speed}}</p>
+      <p>Model: {{starship.model}}</p>
+      <p>Cost in credits: {{starship.cost_in_credits}}</p>
+      <p>Cargo capacity: {{starship.cargo_capacity}}</p>
+      <p>Starship class: {{starship.starship_class}}</p>
+      <p>Length : {{starship.length}}</p>
+    </div>
+    <div class="col-12">
+      <app-films-list [links]="starship.films"></app-films-list>
+      <app-people-list [links]="starship.pilots"></app-people-list>
+      <button (click)="backToResources()" class="btn btn-primary">Back to resources</button>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+

@@ -33,7 +33,6 @@ export class AuthService {
   isLoggedIn(){
     const helper = new JwtHelperService();
     let token = localStorage.getItem('token');
-    console.log('token: ', token)
     if(!token){
       return false;
     }

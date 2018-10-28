@@ -14,11 +14,11 @@ export class StarshipsService extends DataService {
     super(environment.api.starships,http)
   }
 
-  getSpecies(page?: number, search?: string): Observable<any>{
+  getStarships(page?: number, search?: string): Observable<any>{
     return super.getAll(page, search);
   }
 
-  getOneSpecies(id: string): Observable<Starship>{
+  getStarship(id: string): Observable<Starship>{
     return super.getOne(id);
   }
 

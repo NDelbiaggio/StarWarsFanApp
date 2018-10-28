@@ -20,4 +20,8 @@ export class PeopleService extends DataService {
     return super.getAll(page, search);
       // .pipe(map(res => res.results));
   }
+
+  getPerson(id: string): Observable<Person>{
+    return super.getOne(id);
+  }
 }

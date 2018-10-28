@@ -5,9 +5,8 @@ export interface Person{
     mass: string;
     hair_color: string;
     skin_color: string;
-    homeworld: string;
+    homeworld: any;
     birth_year: string;
-    url: string;
     gender: string;
     eye_color: string;
     vehicles: Vehicle[];
@@ -16,6 +15,7 @@ export interface Person{
     starships: Starship[];
     created: Date;
     edited: Date
+    url: string;
 }
 
 export interface Film{
@@ -94,7 +94,6 @@ export interface Starship{
 
 export interface Species{
     name: string;
-    homeworld: string;
     average_height: string;
     eye_colors: string;
     classification: string;
@@ -103,6 +102,7 @@ export interface Species{
     average_lifespan: string;
     designation: string;
     skin_colors: string;
+    homeworld: any;
     films: Film[];
     people: Person[];
     url: string;

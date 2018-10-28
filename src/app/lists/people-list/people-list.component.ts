@@ -1,8 +1,8 @@
-import { Subscription } from 'rxjs';
 import { PeopleService } from './../../services/api/people.service';
 import { Component, OnInit, OnDestroy, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { Person } from '../../models/resources';
 import { ListViewComponent } from '../listViewResource';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-people-list',
@@ -11,7 +11,10 @@ import { ListViewComponent } from '../listViewResource';
 })
 export class PeopleListComponent extends ListViewComponent<Person> {
 
-  constructor(private peopleService: PeopleService) { 
+  constructor(
+    private peopleService: PeopleService,
+    private router: Router
+  ) { 
     super(peopleService);
   }
 
@@ -19,4 +22,11 @@ export class PeopleListComponent extends ListViewComponent<Person> {
     super.loadData(pageNumber);
   }
 
+  navigateToDetails(personUrl: String){
+    let urlSplitted = personUrl.split('/');
+    let personId =  urlSplitted[urlSplitted.length - 2];
+    this.router.navigate(['/people',personId]);
+  }
+
 }
+

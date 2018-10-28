@@ -23,10 +23,9 @@ export class FilmsListComponent extends ListViewComponent<Film> {
     super.loadData(pageNumber);
   }
 
-  navigateToFilm(film: Film){
-    let urlSplitted = film.url.split('/');
-    let filmId =  urlSplitted[urlSplitted.length - 2]
-    console.log(filmId);
+  navigateToDetails(filmUrl: String){
+    let urlSplitted = filmUrl.split('/');
+    let filmId =  urlSplitted[urlSplitted.length - 2];
     this.router.navigate(['/films',filmId]);
   }
 

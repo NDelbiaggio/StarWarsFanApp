@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import {map} from 'rxjs/operators';
 import { Observable, forkJoin } from 'rxjs';
 
 
@@ -24,6 +23,11 @@ export abstract class DataService {
   }
 
   getByLinks(links: []){
+    if(links.length == 0){
+      return new Observable(observer =>{
+        observer.next([]);
+      })
+    }
     let observables: Observable<any>[] = [];
     links.forEach(link => {
       observables.push(this.http.get(link));

@@ -6,6 +6,8 @@ export class ListViewComponent<T> implements  OnChanges, OnDestroy {
 
     @Input('links') links: [];
     @Input('search') search: string;
+    @Input('title') title: string;
+    
     private elemPerPage: number = 10;
     private nbPages: number;
 
@@ -13,6 +15,8 @@ export class ListViewComponent<T> implements  OnChanges, OnDestroy {
     private subscription: Subscription;
 
     private dataService: DataService;
+
+    isLoading: boolean = false;
 
     constructor(dataService: DataService){
         this.dataService = dataService;
@@ -34,16 +38,22 @@ export class ListViewComponent<T> implements  OnChanges, OnDestroy {
         if(this.subscription){
             this.subscription.unsubscribe();
         }
+        this.isLoading = true;
         this.subscription = this.dataService.getAll(pageNumber, this.search)
             .subscribe((res)=>{
                 this.list = res.results;
                 this.nbPages = Math.ceil(res.count/this.elemPerPage);
+                this.isLoading = false;
             });
     }
     
     loadDataFromLinks(){
+        this.isLoading = true;
         this.subscription = this.dataService.getByLinks(this.links)
-            .subscribe(list =>this.list = list);
+            .subscribe(list => {
+                this.list = list;
+                this.isLoading = false;
+            });
     }
 
 }

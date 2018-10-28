@@ -1,5 +1,10 @@
 <h2>Species</h2>
-<table class="table table-responsive">
+<ng-container *ngIf="isLoading; else dataLoaded">
+  <loader></loader>
+</ng-container>
+
+<ng-template #dataLoaded>
+  <table class="table table-responsive">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -15,7 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let spec of list; let i = index" >
+      <tr *ngFor="let spec of list; let i = index" (click)="navigateToDetails(spec.url)">
         <th scope="row">{{i+1}}</th>
         <td scope="col">{{spec.name}}</td>
         <td scope="col">{{spec.average_height}}</td>
@@ -26,18 +31,9 @@
         <td scope="col">{{spec.average_lifespan}}</td>
         <td scope="col">{{spec.designation}}</td>
         <td scope="col">{{spec.skin_colors}}</td>
-    </tr>
+      </tr>
     </tbody>
   </table>
 
-  <app-pagination-bar [size]="nbPages" (changed)="loadSpecies($event)" ></app-pagination-bar>
-
-  
-
-
-
-
-
-
-
-
+  <app-pagination-bar [size]="nbPages" (changed)="loadSpecies($event)"></app-pagination-bar>
+</ng-template>

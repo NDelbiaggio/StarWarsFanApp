@@ -8,7 +8,7 @@ export const environment = {
   production: false,
   api: {
     resources: `${apiRoot}`,
-    people: `${apiRoot}people/`,
+    people: `${apiRoot}people`,
     planets: `${apiRoot}planets`,
     films: `${apiRoot}films`,
     species: `${apiRoot}species`,

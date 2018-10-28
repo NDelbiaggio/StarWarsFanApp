@@ -1,0 +1,22 @@
+<div class="container">
+  <div *ngIf="vehicle" class="row">
+    <div class="col-md-12">
+      <h2>{{vehicle.name}}</h2>
+      <p>Model: {{vehicle.model}}</p>
+      <p>Vehicle class: {{vehicle.vehicle_class}}</p>
+      <p>Length: {{vehicle.length}}</p>
+      <p>Passengers: {{vehicle.passengers}}</p>
+      <p>Manufacturer: {{vehicle.manufacturer}}</p>
+      <p>Consumables: {{vehicle.consumables}}</p>
+      <p>Crew: {{vehicle.crew}}</p>
+      <p>Max atmosphering speed: {{vehicle.max_atmosphering_speed}}</p>
+      <p>Cost in credits: {{vehicle.cost_in_credits}}</p>
+      <p>Cargo capacity: {{vehicle.cargo_capacity}}</p>
+    </div>
+    <div class="col-12">
+      <app-people-list [links]="vehicle.pilots"></app-people-list>
+      <app-films-list [links]="vehicle.films"></app-films-list>
+      <button (click)="backToResources()" class="btn btn-primary">Back to resources</button>
+    </div>
+  </div>
+</div>

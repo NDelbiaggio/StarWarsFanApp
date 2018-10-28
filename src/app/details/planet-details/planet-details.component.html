@@ -1,0 +1,21 @@
+<div class="container">
+    <div  *ngIf="planet" class="row">
+      <div class="col-md-12">
+        <h2>{{planet.name}}</h2>
+        <p>Climate: {{planet.climate}}</p>
+        <p>Diameter: {{planet.diameter}}</p>
+        <p>Gravity: {{planet.gravity}}</p>
+        <p>Orbital period: {{planet.orbital_period}}</p>
+        <p>Population: {{planet.population}}</p>
+        <p>Rotation period: {{planet.rotation_period}}</p>
+        <p>Surface water: {{planet.surface_water}}</p>
+        <p>Terrain: {{planet.terrain}}</p>
+      </div>
+      <div class="col-12">
+          <app-films-list [links]="planet.films" ></app-films-list>
+          <app-people-list [links]="planet.residents" ></app-people-list>
+          <button (click)="backToResources()" class="btn btn-primary">Back to resources</button>
+      </div>
+    </div>
+  </div>
+  

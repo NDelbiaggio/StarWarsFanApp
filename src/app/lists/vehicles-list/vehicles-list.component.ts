@@ -2,6 +2,7 @@ import { Vehicle } from './../../models/resources';
 import { VehiclesService } from './../../services/api/vehicles.service';
 import { Component, OnInit } from '@angular/core';
 import { ListViewComponent } from '../listViewResource';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehicles-list',
@@ -10,12 +11,21 @@ import { ListViewComponent } from '../listViewResource';
 })
 export class VehiclesListComponent extends ListViewComponent<Vehicle> {
 
-  constructor(private vehicleService: VehiclesService) { 
+  constructor(
+    private vehicleService: VehiclesService,
+    private router: Router
+  ) { 
     super(vehicleService);
   }
 
   loadVehicules(pageNumber){
     super.loadData(pageNumber);
+  }
+
+  navigateToDetails(vehicleUrl: String){
+    let urlSplitted = vehicleUrl.split('/');
+    let vehicleId =  urlSplitted[urlSplitted.length - 2];
+    this.router.navigate(['/vehicles', vehicleId]);
   }
 
 }

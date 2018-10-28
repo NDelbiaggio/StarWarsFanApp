@@ -1,0 +1,21 @@
+<div class="container">
+    <div  *ngIf="species" class="row">
+      <div class="col-md-12">
+        <h2>{{species.name}}</h2>
+        <p>Average height: {{species.average_height}}</p>
+        <p>Eye colors: {{species.eye_colors}}</p>
+        <p>Classification: {{species.classification}}</p>
+        <p>Hair colors: {{species.hair_colors}}</p>
+        <p>Language: {{species.language}}</p>
+        <p>Average lifespan: {{species.average_lifespan}}</p>
+        <p>Designation: {{species.designation}}</p>
+        <p>Skin colors: {{species.skin_colors}}</p>
+      </div>
+      <div class="col-12">
+          <app-films-list [links]="species.films" ></app-films-list>
+          <app-people-list [links]="species.people" ></app-people-list>
+          <app-planets-list [links]="species.homeworld" ></app-planets-list>
+          <button (click)="backToResources()" class="btn btn-primary">Back to resources</button>
+      </div>
+    </div>
+  </div>
