@@ -1,0 +1,22 @@
+.headerList{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    .display{
+        position: flex;
+        right: 0;
+        .fa{
+            vertical-align: middle;
+            font-size: 24px;
+        }
+    }
+}
+
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+ }
+
+.active{
+    color: #0062cc;
+}

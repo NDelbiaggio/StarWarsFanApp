@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 })
 export class PlanetsListComponent extends ListViewComponent<Planet> {
 
+  display: string = "card";
+
   constructor(
     private planetService: PlanetsService,
     private router: Router

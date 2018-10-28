@@ -1,40 +1,17 @@
-<h2>{{title}}</h2>
+<app-header-list [title]="title" (displayChanged)="display = $event"></app-header-list>
+
 <ng-container *ngIf="isLoading; else dataLoaded">
   <loader></loader>
 </ng-container>
 
 <ng-template #dataLoaded>
-  <table class="table table-responsive">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Diameter</th>
-        <th scope="col">Population</th>
-        <th scope="col">Surface water</th>
-        <th scope="col">Terrain</th>
-        <th scope="col">Gravity</th>
-        <th scope="col">Climate</th>
-        <th scope="col">Rotation period</th>
-        <th scope="col">Orbital period</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let planet of list; let i = index" (click)="navigateToDetails(planet.url)">
-        <th scope="row">{{i+1}}</th>
-        <td scope="col">{{planet.name}}</td>
-        <td scope="col">{{planet.diameter}}</td>
-        <td scope="col">{{planet.population}}</td>
-        <td scope="col">{{planet.surface_water}}</td>
-        <td scope="col">{{planet.terrain}}</td>
-        <td scope="col">{{planet.gravity}}</td>
-        <td scope="col">{{planet.climate}}</td>
-        <td scope="col">{{planet.rotation_period}}</td>
-        <td scope="col">{{planet.orbital_period}}</td>
-      </tr>
+  <ng-container *ngIf="display == 'card'; else displayCard">
+    <app-card-view (navigateTo)="navigateToDetails($event)" [list]="list"></app-card-view>
+  </ng-container>
+  <ng-template #displayCard>
+    <app-planets-table (navigateTo)="navigateToDetails($event)" [planets]="list"></app-planets-table>
+  </ng-template>
 
-    </tbody>
-  </table>
-
-  <app-pagination-bar [size]="nbPages" (changed)="loadPlanets($event)"></app-pagination-bar>
 </ng-template>
+
+<app-pagination-bar [size]="nbPages" (changed)="loadPlanets($event)"></app-pagination-bar>

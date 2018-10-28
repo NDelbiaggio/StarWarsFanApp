@@ -1,39 +1,16 @@
-<h2>{{title}}</h2>
+<app-header-list [title]="title" (displayChanged)="display = $event"></app-header-list>
+
 <ng-container *ngIf="isLoading; else dataLoaded">
   <loader></loader>
 </ng-container>
 
 <ng-template #dataLoaded>
-  <table class="table table-responsive">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Average height </th>
-        <th scope="col">Eye colors</th>
-        <th scope="col">Classification</th>
-        <th scope="col">Hair colors</th>
-        <th scope="col">Language</th>
-        <th scope="col">Average lifespan</th>
-        <th scope="col">Designation</th>
-        <th scope="col">Skin_colors</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let spec of list; let i = index" (click)="navigateToDetails(spec.url)">
-        <th scope="row">{{i+1}}</th>
-        <td scope="col">{{spec.name}}</td>
-        <td scope="col">{{spec.average_height}}</td>
-        <td scope="col">{{spec.eye_colors}}</td>
-        <td scope="col">{{spec.classification}}</td>
-        <td scope="col">{{spec.hair_colors}}</td>
-        <td scope="col">{{spec.language}}</td>
-        <td scope="col">{{spec.average_lifespan}}</td>
-        <td scope="col">{{spec.designation}}</td>
-        <td scope="col">{{spec.skin_colors}}</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <app-pagination-bar [size]="nbPages" (changed)="loadSpecies($event)"></app-pagination-bar>
+  <ng-container *ngIf="display == 'card'; else displayCard">
+    <app-card-view (navigateTo)="navigateToDetails($event)" [list]="list"></app-card-view>
+  </ng-container>
+  <ng-template #displayCard>
+    <app-species-table (navigateTo)="navigateToDetails($event)" [species]="list"></app-species-table>
+  </ng-template>
 </ng-template>
+
+<app-pagination-bar [size]="nbPages" (changed)="loadSpecies($event)"></app-pagination-bar>

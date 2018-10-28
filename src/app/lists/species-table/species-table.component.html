@@ -1,0 +1,30 @@
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Average height </th>
+      <th scope="col">Eye colors</th>
+      <th scope="col">Classification</th>
+      <th scope="col">Hair colors</th>
+      <th scope="col">Language</th>
+      <th scope="col">Average lifespan</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Skin_colors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let spec of species; let i = index" (click)="navigateToDetails(spec.url)">
+      <th scope="row">{{i+1}}</th>
+      <td scope="col">{{spec.name}}</td>
+      <td scope="col">{{spec.average_height}}</td>
+      <td scope="col">{{spec.eye_colors}}</td>
+      <td scope="col">{{spec.classification}}</td>
+      <td scope="col">{{spec.hair_colors}}</td>
+      <td scope="col">{{spec.language}}</td>
+      <td scope="col">{{spec.average_lifespan}}</td>
+      <td scope="col">{{spec.designation}}</td>
+      <td scope="col">{{spec.skin_colors}}</td>
+    </tr>
+  </tbody>
+</table>

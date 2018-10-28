@@ -43,7 +43,10 @@ export class ListViewComponent<T> implements  OnChanges, OnDestroy {
         this.subscription = this.dataService.getAll(pageNumber, this.search)
             .subscribe((res)=>{
                 this.list = res.results;
-                this.nbPages = Math.ceil(res.count/this.elemPerPage);
+                let nbPages = Math.ceil(res.count/this.elemPerPage);
+                if(nbPages != this.nbPages){
+                    this.nbPages = nbPages
+                };
                 this.isLoading = false;
             });
     }

@@ -11,6 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PeopleListComponent extends ListViewComponent<Person> {
 
+  display: string = "card";
+
   constructor(
     private peopleService: PeopleService,
     private router: Router
@@ -20,6 +22,10 @@ export class PeopleListComponent extends ListViewComponent<Person> {
 
   loadPeople(pageNumber){
     super.loadData(pageNumber);
+  }
+
+  toggleDisplay(){
+    this.display = this.display == 'card'? 'table': 'card';
   }
 
   navigateToDetails(personUrl: String){

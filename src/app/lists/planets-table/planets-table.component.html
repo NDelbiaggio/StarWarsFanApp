@@ -1,0 +1,31 @@
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Diameter</th>
+      <th scope="col">Population</th>
+      <th scope="col">Surface water</th>
+      <th scope="col">Terrain</th>
+      <th scope="col">Gravity</th>
+      <th scope="col">Climate</th>
+      <th scope="col">Rotation period</th>
+      <th scope="col">Orbital period</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let planet of planets; let i = index" (click)="navigateToDetails(planet.url)">
+      <th scope="row">{{i+1}}</th>
+      <td scope="col">{{planet.name}}</td>
+      <td scope="col">{{planet.diameter}}</td>
+      <td scope="col">{{planet.population}}</td>
+      <td scope="col">{{planet.surface_water}}</td>
+      <td scope="col">{{planet.terrain}}</td>
+      <td scope="col">{{planet.gravity}}</td>
+      <td scope="col">{{planet.climate}}</td>
+      <td scope="col">{{planet.rotation_period}}</td>
+      <td scope="col">{{planet.orbital_period}}</td>
+    </tr>
+
+  </tbody>
+</table>

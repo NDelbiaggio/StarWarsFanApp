@@ -1,48 +1,17 @@
-<h2>{{title}}</h2>
+<app-header-list [title]="title" (displayChanged)="display = $event"></app-header-list>
+
 <ng-container *ngIf="isLoading; else dataLoaded">
   <loader></loader>
 </ng-container>
 
 <ng-template #dataLoaded>
-  <table class="table table-responsive">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Model</th>
-        <th scope="col">Manufacturer</th>
-        <th scope="col">Passengers</th>
-        <th scope="col">Consumables</th>
-        <th scope="col">Crew</th>
-        <th scope="col">Hyperdrive rating</th>
-        <th scope="col">MGLT</th>
-        <th scope="col">Max atmosphering speed</th>
-        <th scope="col">Cost in credits</th>
-        <th scope="col">Cargo capacity</th>
-        <th scope="col">Starship class</th>
-        <th scope="col">Length</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let starship of list; let i = index" (click)="navigateToDetails(starship.url)">
-        <th scope="row">{{i+1}}</th>
-        <td scope="col">{{starship.name}}</td>
-        <td scope="col">{{starship.model}}</td>
-        <td scope="col">{{starship.manufacturer}}</td>
-        <td scope="col">{{starship.passengers}}</td>
-        <td scope="col">{{starship.consumables}}</td>
-        <td scope="col">{{starship.crew}}</td>
-        <td scope="col">{{starship.hyperdrive_rating}}</td>
-        <td scope="col">{{starship.MGLT}}</td>
-        <td scope="col">{{starship.max_atmosphering_speed}}</td>
-        <td scope="col">{{starship.cost_in_credits}}</td>
-        <td scope="col">{{starship.cargo_capacity}}</td>
-        <td scope="col">{{starship.starship_class}}</td>
-        <td scope="col">{{starship.length}}</td>
-      </tr>
+  <ng-container *ngIf="display == 'card'; else displayCard">
+    <app-card-view (navigateTo)="navigateToDetails($event)" [list]="list"></app-card-view>
+  </ng-container>
+  <ng-template #displayCard>
+    <app-starships-table (navigateTo)="navigateToDetails($event)" [starships]="list"></app-starships-table>
+  </ng-template>
 
-    </tbody>
-  </table>
-
-  <app-pagination-bar [size]="nbPages" (changed)="loadVehicules($event)"></app-pagination-bar>
 </ng-template>
+
+<app-pagination-bar [size]="nbPages" (changed)="loadVehicules($event)"></app-pagination-bar>

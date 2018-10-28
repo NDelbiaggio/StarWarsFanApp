@@ -9,7 +9,7 @@ export class AuthService {
 
   private USERNAME = "admin";
   private PASSWORD = "1234";
-  private TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE1NTk0MjQzMTV9.jXqvXG9yCt_UlDV53BNAld7lGwS7KVXraywuptImcsc";
+  private TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE1MTYyMzkwMjIsImV4cCI6MTU1OTQyNDMxNX0.0NG_3IfiMs2OY9JcuFRH1OQsddff1naXgN5KeuAY238";
 
   constructor() { }
 
@@ -33,7 +33,7 @@ export class AuthService {
   isLoggedIn(){
     const helper = new JwtHelperService();
     let token = localStorage.getItem('token');
-    if(!token){
+    if(!token || token != this.TOKEN){
       return false;
     }
     const isExpired = helper.isTokenExpired(token);

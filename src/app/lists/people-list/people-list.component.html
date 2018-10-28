@@ -1,39 +1,19 @@
-<h2>{{title}}</h2>
+<app-header-list [title]="title" (displayChanged)="display = $event" ></app-header-list>
 
 <ng-container *ngIf="isLoading; else dataLoaded">
   <loader></loader>
 </ng-container>
 
 <ng-template #dataLoaded>
-  <table class="table table-responsive">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Height (meters)</th>
-        <th scope="col">Mass</th>
-        <th scope="col">Hair color</th>
-        <th scope="col">Skin color</th>
-        <th scope="col">Birth year</th>
-        <th scope="col">Gender</th>
-        <th scope="col">Eye color</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let person of list; let i = index" (click)="navigateToDetails(person.url)" >
-        <th scope="row">{{i+1}}</th>
-        <td scope="col">{{person.name}}</td>
-        <td scope="col">{{person.height}}</td>
-        <td scope="col">{{person.mass}}</td>
-        <td scope="col">{{person.hair_color}}</td>
-        <td scope="col">{{person.skin_color}}</td>
-        <td scope="col">{{person.birth_year}}</td>
-        <td scope="col">{{person.gender}}</td>
-        <td scope="col">{{person.eye_color}}</td>
-      </tr>
-
-    </tbody>
-  </table>
-
-  <app-pagination-bar [size]="nbPages" (changed)="loadPeople($event)"></app-pagination-bar>
+  <ng-container *ngIf="display == 'card'; else displayCard">
+    <app-card-view (navigateTo)="navigateToDetails($event)" [list]="list"></app-card-view>
+  </ng-container>
+  <ng-template #displayCard>
+    <app-people-table (navigateTo)="navigateToDetails($event)" [people]="list" ></app-people-table>
+  </ng-template>  
 </ng-template>
+
+<app-pagination-bar 
+  [size]="nbPages" 
+  (changed)="loadPeople($event)">
+</app-pagination-bar> 

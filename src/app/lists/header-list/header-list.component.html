@@ -1,0 +1,11 @@
+<header class="headerList">
+  <h2>{{title}}</h2>
+  <div class="display">
+    <button (click)="toggleDisplay()" [class.active]="display=='card'" class="btn">
+      <i class="fa fa-th-list"></i>
+    </button>
+    <button (click)="toggleDisplay()" [class.active]="display=='table'" class="btn">
+      <i class="fa fa-table"></i>
+    </button>
+  </div>
+</header>

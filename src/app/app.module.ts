@@ -23,6 +23,14 @@ import { SpeciesDetailsComponent } from './details/species-details/species-detai
 import { StarshipDetailsComponent } from './details/starship-details/starship-details.component';
 import { VehicleDetailsComponent } from './details/vehicle-details/vehicle-details.component';
 import { LoaderComponent } from './loader/loader.component';
+import { PeopleTableComponent } from './lists/people-table/people-table.component';
+import { CardViewComponent } from './lists/people-cards/card-view.component';
+import { HeaderListComponent } from './lists/header-list/header-list.component';
+import { VehiclesTableComponent } from './lists/vehicles-table/vehicles-table.component';
+import { StarshipsTableComponent } from './lists/starships-table/starships-table.component';
+import { SpeciesTableComponent } from './lists/species-table/species-table.component';
+import { PlanetsTableComponent } from './lists/planets-table/planets-table.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +50,14 @@ import { LoaderComponent } from './loader/loader.component';
     SpeciesDetailsComponent,
     StarshipDetailsComponent,
     VehicleDetailsComponent,
-    LoaderComponent
+    LoaderComponent,
+    PeopleTableComponent,
+    CardViewComponent,
+    HeaderListComponent,
+    VehiclesTableComponent,
+    StarshipsTableComponent,
+    SpeciesTableComponent,
+    PlanetsTableComponent
   ],
   imports: [
     BrowserModule,

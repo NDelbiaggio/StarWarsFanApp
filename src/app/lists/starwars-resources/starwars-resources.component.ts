@@ -15,7 +15,6 @@ export class StarwarsResourcesComponent implements OnInit, OnDestroy {
 
   searchPattern: String = "";
 
-
   constructor(
     private resourcesService: ResourcesService,
   ) { 
