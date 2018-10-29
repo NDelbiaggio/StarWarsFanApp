@@ -12,6 +12,10 @@
     }
 }
 
+.btn{
+    background-color: transparent;
+}
+
 .btn:focus,.btn:active {
     outline: none !important;
     box-shadow: none;

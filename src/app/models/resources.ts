@@ -37,8 +37,8 @@ export interface Film{
 
 export interface Planet{
     name: string;
-    diameter: string;
     population: string;
+    diameter: string;
     surface_water: string;
     terrain: string;
     gravity: string;

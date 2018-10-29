@@ -1,0 +1,13 @@
+<div class="row">
+  <div *ngFor="let person of people" class="col-md-3">
+    <div class="card resourceCard" (click)="navigateToDetails(person.url)">
+      {{person.name}}
+
+      <app-resource-overview 
+        class="overview" 
+        [fields]="getOverviewFiedls(person)" >
+      </app-resource-overview>
+
+    </div>
+  </div>
+</div>

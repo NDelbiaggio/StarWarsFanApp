@@ -29,7 +29,7 @@ export abstract class DataService {
    * @returns Observable<any>
    */
   getOne(id: string): Observable<any>{
-    return this.http.get(`${this.url}/${id}`);
+    return this.http.get(`${this.url}/${id}`).pipe(catchError(this.errorHandlerObservable));
   }
 
 
@@ -49,12 +49,16 @@ export abstract class DataService {
     links.forEach(link => {
       observables.push(this.http.get(link));
     });
-    return forkJoin(observables);
+    return forkJoin(observables).pipe(catchError(this.errorHandlerObservable));
   }
 
   errorHandlerObservable(error: Response): Observable<any>{
     if(error.status == 404){
       console.log("endpoint not found");
+    }else if(error.status == 503){
+      console.log("The server had a problem, please contact your provider");
+    } else{
+      console.log("An unexpected error occured, please contatct your provider");
     }
     return of([]);
   }

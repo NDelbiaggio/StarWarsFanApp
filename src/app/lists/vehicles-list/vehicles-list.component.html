@@ -6,7 +6,7 @@
 
 <ng-template #dataLoaded>
   <ng-container *ngIf="display == 'card'; else displayCard">
-    <app-card-view (navigateTo)="navigateToDetails($event)" [list]="list"></app-card-view>
+    <app-vehicles-cards (navigateTo)="navigateToDetails($event)" [vehicles]="list"></app-vehicles-cards>
   </ng-container>
   <ng-template #displayCard>
     <app-vehicles-table (navigateTo)="navigateToDetails($event)" [vehicles]="list"></app-vehicles-table>

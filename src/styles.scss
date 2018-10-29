@@ -3,3 +3,20 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~font-awesome/css/font-awesome.css";
 
+
+
+.resourceCard{
+    position: relative;
+    padding: 1em;
+    margin: 15px auto;
+
+    .overview {
+        display: none;
+    }
+    
+    &:hover {
+        .overview{
+            display: block;
+        }
+    }
+}
