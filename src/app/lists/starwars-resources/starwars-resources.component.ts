@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { PeopleService } from './../../services/api/people.service';
 import { ResourcesService, Category } from './../../services/api/resources.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -13,12 +14,14 @@ export class StarwarsResourcesComponent implements OnInit, OnDestroy {
   private categories: Category[];
   private resourceSubscription: Subscription;
 
+  private filter: string[];
   searchPattern: String = "";
 
   constructor(
     private resourcesService: ResourcesService,
   ) { 
     this.categories = [];
+    this.filter = [];
   }
 
   ngOnInit() {
@@ -26,6 +29,20 @@ export class StarwarsResourcesComponent implements OnInit, OnDestroy {
       .subscribe(categories =>{
         this.categories = categories;
       });
+  }
+
+  updateFilter(category: string){
+    let ind = this.filter.findIndex(cat => cat == category);
+    if(ind != -1){
+      this.filter.splice(ind, 1);
+    }else{
+      this.filter.push(category);
+    }    
+  }
+
+  hasToBeDisplayed(category: string): boolean{
+    // if(this.filter.length == 0){ return true};
+    return this.filter.findIndex(cat=>cat == category) != -1;
   }
 
   ngOnDestroy(){

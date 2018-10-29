@@ -58,7 +58,11 @@ const routes: Routes = [
     path: '', 
     redirectTo: '/resources', 
     pathMatch: 'full' 
-  }
+  },
+  // {
+  //   path: '**',
+  //   component: NotFoundComponent
+  // }
 ];
 
 @NgModule({

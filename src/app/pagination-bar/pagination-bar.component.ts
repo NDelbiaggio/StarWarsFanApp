@@ -7,7 +7,7 @@ import { Component, OnInit, Input, SimpleChanges, SimpleChange, OnChanges, Outpu
   styleUrls: ['./pagination-bar.component.scss']
 })
 export class PaginationBarComponent implements OnInit, OnChanges {  
-  @Input('size') nbPages = 0;
+  @Input('size') nbPages: number = 0;
   @Input('currentPage') currentPage = 1;
   @Output('changed') pageHasChanged: EventEmitter<number>;
 
@@ -31,7 +31,9 @@ export class PaginationBarComponent implements OnInit, OnChanges {
    * Fill the aray with the sequence of page number
    */
   fillPages(){
-    this.pages = Array(this.nbPages).fill(1).map((x, i) => i);
+    if(this.nbPages){
+      this.pages = Array(this.nbPages).fill(1).map((x, i) => i);
+    }
   }
 
   /**

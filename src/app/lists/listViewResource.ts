@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges, OnChanges, OnDestroy } from '@angular/core';
+import { Input, SimpleChanges, OnChanges, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DataService } from '../services/api/data.service';
 
@@ -35,11 +35,12 @@ export class ListViewComponent<T> implements  OnChanges, OnDestroy {
         this.subscription.unsubscribe();
     }
 
-    loadData(pageNumber = 1){
+    loadData(pageNumber = 1): void{
         if(this.subscription){
             this.subscription.unsubscribe();
         }
         this.isLoading = true;
+        
         this.subscription = this.dataService.getAll(pageNumber, this.search)
             .subscribe((res)=>{
                 this.list = res.results;
@@ -48,10 +49,12 @@ export class ListViewComponent<T> implements  OnChanges, OnDestroy {
                     this.nbPages = nbPages
                 };
                 this.isLoading = false;
+            }, (error)=>{
+                console.log("here" , error)
             });
     }
     
-    loadDataFromLinks(){
+    loadDataFromLinks(): void{
         this.isLoading = true;
         this.subscription = this.dataService.getByLinks(this.links)
             .subscribe(list => {
