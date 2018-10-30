@@ -1,0 +1,30 @@
+<div class="container">
+  <input 
+    type="search" 
+    name="search resource" 
+    id="searchResources" 
+    class="form-control" 
+    placeholder="Search..."
+    [(ngModel)]="searchPattern">
+
+  <h2>Select categories</h2>
+  <div class="row">
+    <div *ngFor="let category of categories" class="col-md-2 col-6">
+      <div class="card">
+        <img (click)="updateFilter(category.name)" [class.hideCategory]="!hasToBeDisplayed(category.name)" class="card-img-top"
+          src="assets/resources/{{category.name}}.jpg" alt="{{category.name}}">
+        <div class="card-body">
+          <p class="card-text">{{category.name|titlecase}} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-films-list *ngIf="hasToBeDisplayed('films')" [search]="searchPattern"></app-films-list>
+  <app-people-list *ngIf="hasToBeDisplayed('people')" [search]="searchPattern"></app-people-list>
+  <app-planets-list *ngIf="hasToBeDisplayed('planets')" [search]="searchPattern"></app-planets-list>
+  <app-vehicles-list *ngIf="hasToBeDisplayed('vehicles')" [search]="searchPattern"></app-vehicles-list>
+  <app-species-list *ngIf="hasToBeDisplayed('species')" [search]="searchPattern"></app-species-list>
+  <app-starships-list *ngIf="hasToBeDisplayed('starships')" [search]="searchPattern"></app-starships-list>
+
+</div>

@@ -29,6 +29,7 @@
       "name": "swapi",
       "urls": [
         "https://swapi.co/api/",
+        "https://swapi.co/api/people",
         "https://swapi.co/api/**"
       ],
       "cacheConfig": {

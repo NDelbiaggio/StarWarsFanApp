@@ -2,46 +2,47 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { LoaderComponent } from './loader/loader.component';
 import { PaginationBarComponent } from './pagination-bar/pagination-bar.component';
 
-import { StarwarsResourcesComponent } from './lists/starwars-resources/starwars-resources.component';
 import { HeaderListComponent } from './lists/header-list/header-list.component';
-import { PeopleListComponent } from './lists/people-list/people-list.component';
-import { FilmsListComponent } from './lists/films-list/films-list.component';
-import { PlanetsListComponent } from './lists/planets-list/planets-list.component';
-import { VehiclesListComponent } from './lists/vehicles-list/vehicles-list.component';
-import { SpeciesListComponent } from './lists/species-list/species-list.component';
-import { StarshipsListComponent } from './lists/starships-list/starships-list.component';
-
-import { FilmDetailsComponent } from './details/film-details/film-details.component';
-import { PersonDetailsComponent } from './details/person-details/person-details.component';
-import { PlanetDetailsComponent } from './details/planet-details/planet-details.component';
-import { SpeciesDetailsComponent } from './details/species-details/species-details.component';
-import { StarshipDetailsComponent } from './details/starship-details/starship-details.component';
-import { VehicleDetailsComponent } from './details/vehicle-details/vehicle-details.component';
-
-import { PeopleTableComponent } from './lists/people-table/people-table.component';
-import { VehiclesTableComponent } from './lists/vehicles-table/vehicles-table.component';
-import { StarshipsTableComponent } from './lists/starships-table/starships-table.component';
-import { SpeciesTableComponent } from './lists/species-table/species-table.component';
-import { PlanetsTableComponent } from './lists/planets-table/planets-table.component';
-
-import { CardViewComponent } from './lists/people-cards/card-view.component';
-import { PeopleCardsComponent } from './people-cards/people-cards.component';
-import { SpeciesCardsComponent } from './species-cards/species-cards.component';
-import { VehiclesCardsComponent } from './vehicles-cards/vehicles-cards.component';
-import { StarshipsCardsComponent } from './starships-cards/starships-cards.component';
-import { PlanetsCardsComponent } from './planets-cards/planets-cards.component';
-
 import { ResourceOverviewComponent } from './resource-overview/resource-overview.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import { SpeciesCardsComponent } from './resources/species/species-cards/species-cards.component';
+import { CardViewComponent } from './lists/card-view/card-view.component';
 
+import { PeopleListComponent } from './resources/people/people-list/people-list.component';
+import { PeopleCardsComponent } from './resources/people/people-cards/people-cards.component';
+import { PeopleTableComponent } from './resources/people/people-table/people-table.component';
+import { PersonDetailsComponent } from './resources/people/person-details/person-details.component';
+
+import { SpeciesTableComponent } from './resources/species/species-table/species-table.component';
+import { SpeciesListComponent } from './resources/species/species-list/species-list.component';
+import { SpeciesDetailsComponent } from './resources/species/species-details/species-details.component';
+
+import { PlanetsCardsComponent } from './resources/planets/planets-cards/planets-cards.component';
+import { PlanetDetailsComponent } from './resources/planets/planet-details/planet-details.component';
+import { PlanetsListComponent } from './resources/planets/planets-list/planets-list.component';
+import { PlanetsTableComponent } from './resources/planets/planets-table/planets-table.component';
+
+import { VehicleDetailsComponent } from './resources/vehicles/vehicle-details/vehicle-details.component';
+import { VehiclesTableComponent } from './resources/vehicles/vehicles-table/vehicles-table.component';
+import { VehiclesCardsComponent } from './resources/vehicles/vehicles-cards/vehicles-cards.component';
+import { VehiclesListComponent } from './resources/vehicles/vehicles-list/vehicles-list.component';
+
+import { StarshipsTableComponent } from './resources/starships/starships-table/starships-table.component';
+import { StarshipsListComponent } from './resources/starships/starships-list/starships-list.component';
+import { StarshipsCardsComponent } from './resources/starships/starships-cards/starships-cards.component';
+import { StarshipDetailsComponent } from './resources/starships/starship-details/starship-details.component';
+
+import { FilmsListComponent } from './resources/films/films-list/films-list.component';
+import { FilmDetailsComponent } from './resources/films/film-details/film-details.component';
+import { StarwarsResourcesComponent } from './resources/starwars-resources/starwars-resources.component';
 
 @NgModule({
   declarations: [

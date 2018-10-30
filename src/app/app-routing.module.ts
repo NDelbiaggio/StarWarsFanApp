@@ -1,15 +1,15 @@
-import { PlanetDetailsComponent } from './details/planet-details/planet-details.component';
 import { AuthGuard } from './services/auth-guard.service';
-import { StarwarsResourcesComponent } from './lists/starwars-resources/starwars-resources.component';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { FilmDetailsComponent } from './details/film-details/film-details.component';
-import { SpeciesDetailsComponent } from './details/species-details/species-details.component';
-import { PersonDetailsComponent } from './details/person-details/person-details.component';
-import { StarshipDetailsComponent } from './details/starship-details/starship-details.component';
-import { VehicleDetailsComponent } from './details/vehicle-details/vehicle-details.component';
+import { FilmDetailsComponent } from './resources/films/film-details/film-details.component';
+import { SpeciesDetailsComponent } from './resources/species/species-details/species-details.component';
+import { VehicleDetailsComponent } from './resources/vehicles/vehicle-details/vehicle-details.component';
+import { PlanetDetailsComponent } from './resources/planets/planet-details/planet-details.component';
+import { PersonDetailsComponent } from './resources/people/person-details/person-details.component';
+import { StarshipDetailsComponent } from './resources/starships/starship-details/starship-details.component';
+import { StarwarsResourcesComponent } from './resources/starwars-resources/starwars-resources.component';
 
 const routes: Routes = [
   {
