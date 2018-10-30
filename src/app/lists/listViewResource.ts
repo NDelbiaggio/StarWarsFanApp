@@ -11,12 +11,12 @@ export class ListViewComponent<T> implements  OnChanges, OnDestroy {
     private elemPerPage: number = 10;
     nbPages: number;
 
-    protected list: T[];;
+    list: T[];;
     private subscription: Subscription;
 
     private dataService: DataService;
 
-    isLoading: boolean = false;
+    isLoading: boolean = true;
 
     constructor(dataService: DataService, defaultTitle: string){
         this.dataService = dataService;

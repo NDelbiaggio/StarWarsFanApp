@@ -1,25 +1,27 @@
-<h2>{{title}}</h2>
-<ng-container *ngIf="isLoading; else dataLoaded">
-  <loader></loader>
-</ng-container>
+<div *ngIf="isLoading || list.length > 0">
+  <h2>{{title}}</h2>
+  <ng-container *ngIf="isLoading; else dataLoaded">
+    <loader></loader>
+  </ng-container>
 
-<ng-template #dataLoaded>
-  <div class="row">
-    <div *ngFor="let film of list" class="col-md-4">
-      <div class="card resourceCard" (click)="navigateToDetails(film.url)">
-        <app-resource-overview 
-          class="overview" 
-          [fields]="getOverviewFiedls(film)" >
-        </app-resource-overview>
+  <ng-template #dataLoaded>
+    <div class="row">
+      <div *ngFor="let film of list" class="col-md-3">
+        <div class="card resourceCard" (click)="navigateToDetails(film.url)">
+          <app-resource-overview 
+            class="overview" 
+            [fields]="getOverviewFiedls(film)" >
+          </app-resource-overview>
 
-        <img class="card-img-top" src="assets/films/{{film.episode_id}}.jpg" alt="{{film.name}}">
-        <div class="card-body">
-          <h5>{{film.title}}</h5>
-          <p>{{film.release_date|date:'dd MMMM yyyy'}}</p>
-          <!-- <p>{{film.opening_crawl}}</p> -->
-          <p class="card-text">{{film.name|titlecase}} </p>
+          <img class="card-img-top" src="assets/films/{{film.episode_id}}.jpg" alt="{{film.name}}">
+          <div class="card-body">
+            <h5>{{film.title}}</h5>
+            <p>{{film.release_date|date:'dd MMMM yyyy'}}</p>
+            <!-- <p>{{film.opening_crawl}}</p> -->
+            <p class="card-text">{{film.name|titlecase}} </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</ng-template>
+  </ng-template>
+</div>

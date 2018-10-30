@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -11,7 +12,11 @@ export class AuthService {
   private PASSWORD = "1234";
   private TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE1MTYyMzkwMjIsImV4cCI6MTU1OTQyNDMxNX0.0NG_3IfiMs2OY9JcuFRH1OQsddff1naXgN5KeuAY238";
 
-  constructor() { }
+  userStatus: EventEmitter<boolean>;
+
+  constructor() {
+    this.userStatus = new EventEmitter<boolean>();
+  }
 
   login(credentials): Promise<boolean>{
     return new Promise<boolean>((resolve, reject)=>{
@@ -28,6 +33,7 @@ export class AuthService {
 
   logout(){
     localStorage.removeItem('token');
+    this.userStatus.emit(false);
   }
 
   isLoggedIn(){
@@ -37,6 +43,16 @@ export class AuthService {
       return false;
     }
     const isExpired = helper.isTokenExpired(token);
-    return !isExpired;
+    if(!isExpired){
+      this.userStatus.emit(true);
+      return true;
+    }else{
+      this.userStatus.emit(false);
+      return false;
+    }
+  }
+
+  isLoggedInObservable(): Observable<boolean>{
+    return this.userStatus.asObservable();
   }
 }

@@ -1,17 +1,19 @@
-<app-header-list [title]="title" (displayChanged)="display = $event"></app-header-list>
+<div *ngIf="isLoading || list.length > 0">
+  <app-header-list [title]="title" (displayChanged)="display = $event"></app-header-list>
 
-<ng-container *ngIf="isLoading; else dataLoaded">
-  <loader></loader>
-</ng-container>
-
-<ng-template #dataLoaded>
-  <ng-container *ngIf="display == 'card'; else displayCard">
-    <app-planets-cards (navigateTo)="navigateToDetails($event)" [planets]="list"></app-planets-cards>
+  <ng-container *ngIf="isLoading; else dataLoaded">
+    <loader></loader>
   </ng-container>
-  <ng-template #displayCard>
-    <app-planets-table (navigateTo)="navigateToDetails($event)" [planets]="list"></app-planets-table>
+
+  <ng-template #dataLoaded>
+    <ng-container *ngIf="display == 'card'; else displayCard">
+      <app-planets-cards (navigateTo)="navigateToDetails($event)" [planets]="list"></app-planets-cards>
+    </ng-container>
+    <ng-template #displayCard>
+      <app-planets-table (navigateTo)="navigateToDetails($event)" [planets]="list"></app-planets-table>
+    </ng-template>
+
   </ng-template>
 
-</ng-template>
-
-<app-pagination-bar [size]="nbPages" (changed)="loadPlanets($event)"></app-pagination-bar>
+  <app-pagination-bar [size]="nbPages" (changed)="loadPlanets($event)"></app-pagination-bar>
+</div>

@@ -5,8 +5,18 @@
         margin: 30px auto;
     }
 
-    .card > img{
-        cursor: pointer;
+    .row{
+        margin: 30px auto;
+        .card{
+
+            img{
+                cursor: pointer;
+            }
+
+            .card-body{
+                text-align: center;
+            }
+        }    
     }
 }
 
@@ -14,3 +24,12 @@
     opacity: 0.2;
 }
 
+.fa-question-circle:hover:after{
+    content: "Click an image to select a category";
+    padding: 0.5em;
+    position: relative;
+    left: 10px;
+    font-size: 18px;
+    border: 1px #d8dde6 solid;
+    border-radius: 20px;
+}

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Person } from '../models/resources';
 
 @Component({
   selector: 'app-resource-overview',
