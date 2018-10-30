@@ -1,0 +1,122 @@
+{
+  "configVersion": 1,
+  "index": "https://NDelbiaggio.github.io/StarWarsFanApp/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://NDelbiaggio.github.io/StarWarsFanApp/favicon.ico",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/fontawesome-webfont.674f50d287a8c48dc19b.eot",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/fontawesome-webfont.912ec66d7572ff821749.svg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/fontawesome-webfont.af7ae505a9eed503f8b8.woff2",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/fontawesome-webfont.b06871f281fee6b241d6.ttf",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/fontawesome-webfont.fee66e712a8a08eef580.woff",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/index.html",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/main.678f9f6b1301a4fe22cc.js",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/polyfills.7f205259d3713dc1e37e.js",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/runtime.ec2944dd8b20ec099bf3.js",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/styles.c3f9a160e670ee9bba7d.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/1.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/2.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/3.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/4.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/5.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/6.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/7.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-128x128.png",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-144x144.png",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-152x152.png",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-192x192.png",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-384x384.png",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-512x512.png",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-72x72.png",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-96x96.png",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/resources/films.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/resources/people.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/resources/planets.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/resources/species.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/resources/starships.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/resources/vehicles.jpg",
+        "https://NDelbiaggio.github.io/StarWarsFanApp/assets/stormtrooper.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "swapi",
+      "patterns": [
+        "https:\\/\\/swapi\\.co\\/api\\/",
+        "https:\\/\\/swapi\\.co\\/api\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 100,
+      "maxAge": 3600000,
+      "timeoutMs": 10000,
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/1.jpg": "8c195f722b735114d8ac52190bf16aa01f060acb",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/2.jpg": "e0fa2aa8f8d07a85e24aec7800f8ffd277b4bffb",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/3.jpg": "4e01304014d5e005eef6665e384bd79a705b1a01",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/4.jpg": "3e2c6562e77d87b532b6cea1fcf1a63c9fd00f3d",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/5.jpg": "61fc22768c62ca9814bece90ab0407459b997873",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/6.jpg": "78bc859c25d8055beb857769dea05fcbc21af915",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/films/7.jpg": "63d530df2fd3bab74f2e25e873da116bdf33d821",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-128x128.png": "4f46d02801c106a82cfc6f87cea100b819d5c46b",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-144x144.png": "9340c7774a8eb99e572c8176c31dc813fa590aef",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-152x152.png": "99b4861441eab713a904e24c28cfaf1b56dd5945",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-192x192.png": "1aa00143385468ce498dbd5d8a797fd1b938b3d9",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-384x384.png": "df05877630602b96ecdd796d8c3b4ff610921c03",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-512x512.png": "3a08afeb0a404a38a20c323b160fe0830b87d23c",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-72x72.png": "fe3c070ba1343055e34a52e41cd5b0d41d086f6f",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/icons/icon-96x96.png": "0e137a01f106ffdec4643da02b282f4d3dddc45e",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/resources/films.jpg": "0cd58b77f01c8ff90ee4eb052ffc8c64d3f6dd1a",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/resources/people.jpg": "836178ec37ecb08c12d9630096f2e8237d381b28",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/resources/planets.jpg": "d041519a583f011bf03b786c40c15c3684d73962",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/resources/species.jpg": "e276f49f821d28db50175ed361a21b15e336f88b",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/resources/starships.jpg": "b0bcfcff5f5f57c4f26e6de5e375bc81972cb880",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/resources/vehicles.jpg": "499ef49a73dc7c78dd6452e38054784bcf65fcd6",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/assets/stormtrooper.png": "fa61cbcdd12f281bfde3a271c936912b76e2bd9c",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/favicon.ico": "79f15905f8f56973bfd6195c4d3f61eb6c052c70",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/fontawesome-webfont.674f50d287a8c48dc19b.eot": "d980c2ce873dc43af460d4d572d441304499f400",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/fontawesome-webfont.912ec66d7572ff821749.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/fontawesome-webfont.af7ae505a9eed503f8b8.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/fontawesome-webfont.b06871f281fee6b241d6.ttf": "13b1eab65a983c7a73bc7997c479d66943f7c6cb",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/fontawesome-webfont.fee66e712a8a08eef580.woff": "28b782240b3e76db824e12c02754a9731a167527",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/index.html": "0eea2cecbbe7f4451bc33572b50921fbfd377d24",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/main.678f9f6b1301a4fe22cc.js": "01792f35eecbacc99b95969a7c2e24ff35110fbc",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/polyfills.7f205259d3713dc1e37e.js": "ce68d153e9b9b6d26b625069c0ee99ae09c6f255",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/runtime.ec2944dd8b20ec099bf3.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "https://NDelbiaggio.github.io/StarWarsFanApp/styles.c3f9a160e670ee9bba7d.css": "2723369f4c09e042a49f005b1923f608e12453a2"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
