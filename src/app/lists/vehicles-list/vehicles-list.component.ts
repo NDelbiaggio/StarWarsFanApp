@@ -1,6 +1,6 @@
 import { Vehicle } from './../../models/resources';
 import { VehiclesService } from './../../services/api/vehicles.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ListViewComponent } from '../listViewResource';
 import { Router } from '@angular/router';
 

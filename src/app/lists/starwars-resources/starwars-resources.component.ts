@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class StarwarsResourcesComponent implements OnInit, OnDestroy {
 
-  private categories: Category[];
+  categories: Category[];
   private resourceSubscription: Subscription;
 
   private filter: string[];

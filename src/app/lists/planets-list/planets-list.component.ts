@@ -1,7 +1,6 @@
 import { PlanetsService } from './../../services/api/planets.service';
-import { Component, OnInit, Input, SimpleChanges, OnChanges, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Planet } from 'src/app/models/resources';
-import { Subscription } from 'rxjs';
 import { ListViewComponent } from '../listViewResource';
 import { Router } from '@angular/router';
 

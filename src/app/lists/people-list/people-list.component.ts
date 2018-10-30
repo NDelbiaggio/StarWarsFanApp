@@ -1,8 +1,8 @@
 import { PeopleService } from './../../services/api/people.service';
-import { Component, OnInit, OnDestroy, Input, SimpleChanges, OnChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { Person } from '../../models/resources';
 import { ListViewComponent } from '../listViewResource';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-people-list',

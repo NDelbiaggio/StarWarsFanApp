@@ -39,6 +39,8 @@ import { StarshipsCardsComponent } from './starships-cards/starships-cards.compo
 import { PlanetsCardsComponent } from './planets-cards/planets-cards.component';
 
 import { ResourceOverviewComponent } from './resource-overview/resource-overview.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -84,7 +86,8 @@ import { ResourceOverviewComponent } from './resource-overview/resource-overview
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,8 @@
 import { SpeciesService } from './../../services/api/species.service';
 import { Species } from './../../models/resources';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ListViewComponent } from '../listViewResource';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-species-list',

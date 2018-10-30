@@ -9,9 +9,9 @@ export class ListViewComponent<T> implements  OnChanges, OnDestroy {
     @Input('title') title: string;
     
     private elemPerPage: number = 10;
-    private nbPages: number;
+    nbPages: number;
 
-    protected list: T[];
+    protected list: T[];;
     private subscription: Subscription;
 
     private dataService: DataService;
@@ -50,7 +50,7 @@ export class ListViewComponent<T> implements  OnChanges, OnDestroy {
                 };
                 this.isLoading = false;
             }, (error)=>{
-                console.log("here" , error)
+                console.log("Error: " , error)
             });
     }
     

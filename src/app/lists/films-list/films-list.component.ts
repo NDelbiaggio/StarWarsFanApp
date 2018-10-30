@@ -1,7 +1,6 @@
 import { Film } from './../../models/resources';
 import { FilmsService } from './../../services/api/films.service';
-import { Component, OnInit, Input, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ListViewComponent } from '../listViewResource';
 
