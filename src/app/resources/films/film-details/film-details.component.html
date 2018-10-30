@@ -1,16 +1,16 @@
 <div class="container">
   <div  *ngIf="film" class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 order-2 order-md-1">
       <h2>{{film.title}}</h2>
       <p>Producer: {{film.producer}}</p>
       <p>Director: {{film.director}}</p>
       <p>Release date: {{film.release_date}}</p>
       <p>{{film.opening_crawl}}</p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 order-1 order-md-2 ">
       <img src="assets/films/{{film.episode_id}}.jpg" alt="{{film.name}}">
     </div>
-    <div class="col-12">
+    <div class="col-12 order-3">
         <app-people-list title="Characters" [links]="film.characters" ></app-people-list>
         <app-planets-list [links]="film.planets" ></app-planets-list>
         <app-species-list [links]="film.species" ></app-species-list>

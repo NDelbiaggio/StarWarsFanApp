@@ -6,7 +6,7 @@
 
   <ng-template #dataLoaded>
     <div class="row">
-      <div *ngFor="let film of list" class="col-md-3">
+      <div *ngFor="let film of list" class="col-sm-6 col-md-4">
         <div class="card resourceCard" (click)="navigateToDetails(film.url)">
           <app-resource-overview 
             class="overview" 
