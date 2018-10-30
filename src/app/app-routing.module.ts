@@ -25,6 +25,11 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'overview',
+    component: StarwarsResourcesComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'films/:id',
     component: FilmDetailsComponent,
     canActivate: [AuthGuard]

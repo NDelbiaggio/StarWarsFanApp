@@ -1,7 +1,16 @@
 .container{
     position: relative;
+
+    input{
+        margin: 30px auto;
+    }
+
+    .card > img{
+        cursor: pointer;
+    }
 }
 
 .hideCategory{
     opacity: 0.2;
 }
+

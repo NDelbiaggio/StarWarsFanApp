@@ -41,7 +41,6 @@ export class StarwarsResourcesComponent implements OnInit, OnDestroy {
   }
 
   hasToBeDisplayed(category: string): boolean{
-    // if(this.filter.length == 0){ return true};
     return this.filter.findIndex(cat=>cat == category) != -1;
   }
 

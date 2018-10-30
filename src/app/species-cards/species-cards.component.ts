@@ -23,8 +23,8 @@ export class SpeciesCardsComponent {
     return [
       {name: 'Classification', value: species.classification},
       {name: 'Designation', value: `${species.designation}`},
-      {name: 'Average height', value: `${species.average_height}`},
-      {name: 'Average lifespan', value: species.average_lifespan},
+      {name: 'Average height', value: `${species.average_height} cm`},
+      {name: 'Average lifespan', value: `${species.average_lifespan} y`},
       {name: 'Language', value: species.language},
     ]
   }

@@ -2,13 +2,13 @@
   <div  *ngIf="person" class="row">
     <div class="col-md-12">
       <h2>{{person.name}}</h2>
-      <p>Gender: {{person.gender}}</p>
-      <p>Birth year: {{person.birth_year}}</p>
-      <p>Height: {{person.height}}</p>
-      <p>Mass: {{person.mass}}</p>
-      <p>Hair color: {{person.hair_color}}</p>
-      <p>Eye Color: {{person.eye_color}}</p>
-      <p>Skin color: {{person.skin_color}}</p>
+      <p><span>Gender: </span> {{person.gender}}</p>
+      <p><span>Birth year: </span> {{person.birth_year}}</p>
+      <p><span>Height: </span> {{person.height}} cm</p>
+      <p><span>Mass: </span> {{person.mass}} kg</p>
+      <p><span>Hair color: </span> {{person.hair_color}}</p>
+      <p><span>Eye Color: </span> {{person.eye_color}}</p>
+      <p><span>Skin color: </span> {{person.skin_color}}</p>
     </div>
     <div class="col-12">
         <app-films-list [links]="person.films" ></app-films-list>

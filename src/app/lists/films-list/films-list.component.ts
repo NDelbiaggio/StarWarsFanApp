@@ -29,4 +29,12 @@ export class FilmsListComponent extends ListViewComponent<Film> {
     this.router.navigate(['/films',filmId]);
   }
 
+  getOverviewFiedls(film: Film){
+    return [
+      {name: 'Episode Id', value: film.episode_id},
+      {name: 'Director', value: film.director},
+      {name: 'Producer', value: film.producer},
+    ]
+  }
+
 }
