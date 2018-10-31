@@ -37,8 +37,28 @@ This app will require the user to sign in before accessing resources. Only the f
 ## PWA - Progressive Web App
 This application has a service-worker used to cache data such as css files, js files and the assets. This service-worker is also caching the api calls, it means that this application is also working offline for the data that has been searched previously.
 
+For testing the cache in local you can install `http-server` globally
+```
+npm install -g http-server
+```
+When this package has been installed we need to go to `dist/StarWarsFanApp` and run
+```
+http-server
+```
+If you don't have a dist folder you can generate it with
+```
+npm run postinstall
+```
+or with angular cli
+```
+ng build --prod
+```
+http-server will serve the application on the indicated url given in your terminal, which should be ` http://127.0.0.1:8080`. Now you can play a bit with the app. Then, turn off the internet connection or switch to the offline mode with the network tab in the developper tools  **warning** make sure that `disable cache` is not clicked in the network tab. Reload the page, and the app should be displayed.
+
+
 ## Data
 This application is consuming the data from the api-endpoint `https://swapi.co/`
+
 **Warning**: this api-endpoint is sometimes down, this is why the application is sometimes not displaying data.
 
 ## Online version
