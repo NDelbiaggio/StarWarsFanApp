@@ -1,5 +1,4 @@
-
-const apiRoot = "https://swapi.co/api/";
+const apiRoot = "https://swapi.dev/api/";
 
 export const environment = {
   production: true,
@@ -11,5 +10,5 @@ export const environment = {
     species: `${apiRoot}species`,
     vehicles: `${apiRoot}vehicles`,
     starships: `${apiRoot}starships`,
-  }
+  },
 };
