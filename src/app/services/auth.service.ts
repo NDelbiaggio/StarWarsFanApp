@@ -1,16 +1,15 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { Observable } from 'rxjs';
-
+import { Injectable, EventEmitter } from "@angular/core";
+import { JwtHelperService } from "@auth0/angular-jwt";
+import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AuthService {
-
   private USERNAME = "admin";
   private PASSWORD = "1234";
-  private TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE1MTYyMzkwMjIsImV4cCI6MTU1OTQyNDMxNX0.0NG_3IfiMs2OY9JcuFRH1OQsddff1naXgN5KeuAY238";
+  private TOKEN =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE5MTYyMzkwMjIsImV4cCI6MjA1OTQyNDMxNX0.1p4XO404q4HLngf7z5tYCGOH_ebX0lbeHKNpmDLQluI";
 
   userStatus: EventEmitter<boolean>;
 
@@ -18,41 +17,44 @@ export class AuthService {
     this.userStatus = new EventEmitter<boolean>();
   }
 
-  login(credentials): Promise<boolean>{
-    return new Promise<boolean>((resolve, reject)=>{
+  login(credentials): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
       setTimeout(() => {
-        if(credentials.username == this.USERNAME && credentials.password == this.PASSWORD){
-          localStorage.setItem('token', this.TOKEN);
+        if (
+          credentials.username == this.USERNAME &&
+          credentials.password == this.PASSWORD
+        ) {
+          localStorage.setItem("token", this.TOKEN);
           resolve(true);
-        }else{
+        } else {
           resolve(false);
         }
       }, 300);
-    })
+    });
   }
 
-  logout(){
-    localStorage.removeItem('token');
+  logout() {
+    localStorage.removeItem("token");
     this.userStatus.emit(false);
   }
 
-  isLoggedIn(){
+  isLoggedIn() {
     const helper = new JwtHelperService();
-    let token = localStorage.getItem('token');
-    if(!token || token != this.TOKEN){
+    let token = localStorage.getItem("token");
+    if (!token || token != this.TOKEN) {
       return false;
     }
     const isExpired = helper.isTokenExpired(token);
-    if(!isExpired){
+    if (!isExpired) {
       this.userStatus.emit(true);
       return true;
-    }else{
+    } else {
       this.userStatus.emit(false);
       return false;
     }
   }
 
-  isLoggedInObservable(): Observable<boolean>{
+  isLoggedInObservable(): Observable<boolean> {
     return this.userStatus.asObservable();
   }
 }
