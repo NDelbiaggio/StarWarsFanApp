@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1648401846817,
+  "timestamp": 1648405632866,
   "index": "/StarWarsFanApp/index.html",
   "assetGroups": [
     {
@@ -18,7 +18,7 @@
         "/StarWarsFanApp/fontawesome-webfont.da909aa098b0ee2d.svg",
         "/StarWarsFanApp/fontawesome-webfont.e9955780856cf8aa.woff2",
         "/StarWarsFanApp/index.html",
-        "/StarWarsFanApp/main.5fd258afdcc8beff.js",
+        "/StarWarsFanApp/main.9f60c31789f4ffe1.js",
         "/StarWarsFanApp/polyfills.a9d11ea1278e3988.js",
         "/StarWarsFanApp/runtime.2b7d771c442ccdb6.js",
         "/StarWarsFanApp/styles.c0c8b29f837e2ad7.css"
@@ -118,8 +118,8 @@
     "/StarWarsFanApp/fontawesome-webfont.cf011583fb81df9f.woff": "28b782240b3e76db824e12c02754a9731a167527",
     "/StarWarsFanApp/fontawesome-webfont.da909aa098b0ee2d.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
     "/StarWarsFanApp/fontawesome-webfont.e9955780856cf8aa.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
-    "/StarWarsFanApp/index.html": "1bfc69f1e9a3ca3a56db7c35e0f01919f48b84f8",
-    "/StarWarsFanApp/main.5fd258afdcc8beff.js": "e81e4b90e1a2c118155ab3d1d639e08a44b5c207",
+    "/StarWarsFanApp/index.html": "5837cc48e95ad1f6364c135ccd02ee1694fce9ec",
+    "/StarWarsFanApp/main.9f60c31789f4ffe1.js": "463ab9394024c7a3f02efd24d15595c75bb67fec",
     "/StarWarsFanApp/polyfills.a9d11ea1278e3988.js": "5c851a7f9ab88f6769183b3b5e9b027aa04a4c70",
     "/StarWarsFanApp/runtime.2b7d771c442ccdb6.js": "05935cab3e353da80b7dbc3a5113ed4b1bb4bc1a",
     "/StarWarsFanApp/styles.c0c8b29f837e2ad7.css": "646fa0a846a2de21a24b0a69b47f38185647999b"
