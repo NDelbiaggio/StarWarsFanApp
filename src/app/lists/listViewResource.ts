@@ -1,7 +1,8 @@
-import { Input, SimpleChanges, OnChanges, OnDestroy } from '@angular/core';
+import { Input, SimpleChanges, OnChanges, OnDestroy, Directive } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DataService } from '../services/api/data.service';
 
+@Directive()
 export class ListViewComponent<T> implements  OnChanges, OnDestroy {
 
     @Input('links') links: [];
